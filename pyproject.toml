@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quest-agent"
+version = "0.1.0"
+description = "故事驱动的目标追踪系统 - 将现实目标映射为中世纪奇幻冒险"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "langchain-core>=0.2,<0.3",
+    "langchain-openai>=0.1",
+    "chromadb>=0.4",
+    "rich",
+    "click",
+    "pydantic>=2.0",
+    "pyyaml",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+]
+
+[project.scripts]
+quest = "src.main:cli"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]

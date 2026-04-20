@@ -1,0 +1,17 @@
+llm:
+  provider: openai
+  model: gpt-5.4-mini
+  api_key_direct: ""            # 直接填入 API Key，例如 sk-xxx
+  api_key_env: OPENAI_API_KEY   # 或者通过环境变量读取（api_key_direct 优先）
+  temperature: 0.8
+  max_tokens: 2000
+  fallback_model: gpt-4o-mini
+  base_url: ""                 # 留空使用 OpenAI 官方，或填入兼容 API 地址
+  embedding_model: text-embedding-3-small  # 向量嵌入模型
+
+game:
+  difficulty: normal        # easy / normal / hard
+  story_style: high_fantasy # high_fantasy / dark_fantasy / comedic
+  language: zh              # zh / en
+  xp_per_level: 200
+  streak_bonus_threshold: 3
